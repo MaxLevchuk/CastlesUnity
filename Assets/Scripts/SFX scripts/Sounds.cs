@@ -20,7 +20,7 @@ public class Sounds : MonoBehaviour
     {
         AudioClip selectedClip = null;
 
-        switch (rand.Next(0, 4))
+        switch (rand.Next(0, 4)) // Дефолтний рандом зі всічом для різних звуків залочених у інспекторі префаба
         {
             case 0:
                 selectedClip = sfx1;
@@ -48,7 +48,7 @@ public class Sounds : MonoBehaviour
             }
 
        
-            float pitch = (float)rand.NextDouble() * 5f + 4f; // 0.5 до 2.5 random from 0.5 to 2.5
+            float pitch = (float)rand.NextDouble() * 5f + 4f; // рандомна тональність звуку 0.5 до 2.5
             
             src.pitch = pitch;
 
