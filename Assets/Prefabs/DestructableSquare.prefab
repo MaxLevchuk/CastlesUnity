@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4358017188133681815}
   - component: {fileID: -5013276550246075571}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DestructableSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 82454547957864225}
   - component: {fileID: 6888693346873962029}
   - component: {fileID: 7953445590257264996}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SquareElement (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7292621243930242894}
   - component: {fileID: 1321993706893310436}
   - component: {fileID: 2567461889433403053}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SquareElement (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}

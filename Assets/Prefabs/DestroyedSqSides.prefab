@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1599047885015017430}
   - component: {fileID: 7048446562630551639}
   - component: {fileID: 9144308816248787510}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: WallSide3
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516227151065902457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DestroyedSqSides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 293026232018442441}
   - component: {fileID: 1408745827553544706}
   - component: {fileID: 6687723490245057317}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: WallSide2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 8131950960058570722}
   - component: {fileID: 448671290278378017}
   - component: {fileID: 5294350661981727494}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: WallSide1
   m_TagString: Wall
   m_Icon: {fileID: 0}
