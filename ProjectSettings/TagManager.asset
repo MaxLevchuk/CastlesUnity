@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Chain
   - Ball
+  - ReplacePrefab
   layers:
   - Default
   - TransparentFX
