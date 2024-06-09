@@ -22,15 +22,14 @@ public class ChainDissapearing : MonoBehaviour
             float elapsedTime = Time.time - breakStartTime;
             float currentAlpha = Mathf.Lerp(1f, 0f, elapsedTime / disappearTime);
 
-            Color newColor = spriteRenderer.color;
-            newColor.a = currentAlpha;
-            spriteRenderer.color = newColor;
+            // Apply the alpha change to this object
+            SetAlpha(gameObject, currentAlpha);
 
             if (elapsedTime >= disappearTime)
             {
                 Destroy(gameObject);
             }
-        }   
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -39,7 +38,6 @@ public class ChainDissapearing : MonoBehaviour
 
         if (!isBreaking && collisionForce > destructionForceThreshold)
         {
-           
             Joint2D[] joints = GetComponents<Joint2D>();
             foreach (Joint2D joint in joints)
             {
@@ -48,6 +46,23 @@ public class ChainDissapearing : MonoBehaviour
 
             isBreaking = true;
             breakStartTime = Time.time;
+        }
+    }
+
+    void SetAlpha(GameObject obj, float alpha)
+    {
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            Color newColor = sr.color;
+            newColor.a = alpha;
+            sr.color = newColor;
+        }
+
+        // Recursively apply to all child objects
+        foreach (Transform child in obj.transform)
+        {
+            SetAlpha(child.gameObject, alpha);
         }
     }
 }
