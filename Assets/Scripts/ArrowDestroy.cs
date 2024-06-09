@@ -13,7 +13,7 @@ public class ArrowDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Projectile").Length != 0)
+        if (GameObject.FindGameObjectsWithTag("Ball").Length != 0)
             Destroy(gameObject);
     }
 

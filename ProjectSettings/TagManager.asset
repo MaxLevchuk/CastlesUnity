@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Projectile
   - Wall
   - Score
   - Target
   - Chain
+  - Ball
   layers:
   - Default
   - TransparentFX
