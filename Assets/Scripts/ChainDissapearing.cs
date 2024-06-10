@@ -32,7 +32,7 @@ public class ChainDissapearing : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)  
     {
         float collisionForce = collision.relativeVelocity.magnitude * collision.rigidbody.mass;
 
