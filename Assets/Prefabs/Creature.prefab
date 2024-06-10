@@ -76,7 +76,9 @@ MonoBehaviour:
   randomDirectionRange: 1
   swayAmplitude: 1
   swayFrequency: 2
-  velocityThreshold: 10
+  velocityThreshold: 2
+  minIdleSpeed: 0.5
+  maxIdleSpeed: 1.5
 --- !u!50 &8061818182929349995
 Rigidbody2D:
   serializedVersion: 4
