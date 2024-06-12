@@ -5,6 +5,8 @@ public class TrajectoryLine : MonoBehaviour
     public LineRenderer lineRenderer;
     public int lineSegmentCount = 50;
     public float timeBetweenPoints = 0.1f;
+    // Distance limitation
+    public float maxTrajectoryDistance = 7f;
 
     void Start()
     {
@@ -46,6 +48,18 @@ public class TrajectoryLine : MonoBehaviour
         {
             float t = i * timeBetweenPoints;
             points[i] = currentPosition + velocity * t + 0.5f * Physics2D.gravity * (t * t);
+
+            // Overlaying the max distance length over further stretching
+            if(Vector2.Distance(startPosition, points[i]) > maxTrajectoryDistance)
+            {
+                Vector2 direction = ((Vector2)points[i] - startPosition).normalized;
+                points[i] = (Vector3)(startPosition + direction * maxTrajectoryDistance);
+                for (int j = i + 1; j < lineSegmentCount; j++)
+                {
+                    points[j] = points[i];
+                }
+                break;
+            }
         }
 
         lineRenderer.SetPositions(points);

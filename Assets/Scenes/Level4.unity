@@ -1831,8 +1831,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 576933672}
-  lineSegmentCount: 50
+  lineSegmentCount: 3
   timeBetweenPoints: 0.1
+  maxTrajectoryDistance: 7
 --- !u!120 &576933672
 LineRenderer:
   serializedVersion: 2
