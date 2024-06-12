@@ -46,6 +46,13 @@ public class SlingshotScript : MonoBehaviour
         currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
 
+        // Disabling collider during aiming
+        Collider2D collider = currentProjectile.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
         Cursor.visible = false;
 
         // Resetting LineRenderer
@@ -56,7 +63,7 @@ public class SlingshotScript : MonoBehaviour
     {
         // Some coordinates changes
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f; // Ensure the Z-coordinate is zero
+        mouseWorldPosition.z = 0f;
 
         Vector3 aimDirection = launchPoint.position - mouseWorldPosition;
         float stretchDistance = aimDirection.magnitude;
@@ -81,6 +88,13 @@ public class SlingshotScript : MonoBehaviour
         Rigidbody2D rb = currentProjectile.GetComponent<Rigidbody2D>();
         if (rb == null) return;
         rb.isKinematic = false;
+
+        // Enabling collider before launching
+        Collider2D collider = currentProjectile.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = true;
+        }
 
         Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
         float launchForceMultiplier = Mathf.Clamp((launchPoint.position - currentProjectile.transform.position).magnitude / maxStretch, 0.5f, 1f);
