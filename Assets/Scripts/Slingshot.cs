@@ -10,13 +10,16 @@ public class SlingshotScript : MonoBehaviour
     private GameObject currentProjectile;
     private bool isAiming = false;
 
-   
+    // Trajectory property
+    private TrajectoryLine trajectoryLine;
+
     private bool initialCursorVisibility;
 
     void Start()
     {
-     
         initialCursorVisibility = Cursor.visible;
+        // Show TrajectoryLine in the scene
+        trajectoryLine = GetComponent<TrajectoryLine>();
     }
 
     void Update()
@@ -43,20 +46,19 @@ public class SlingshotScript : MonoBehaviour
         currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
 
-     
         Cursor.visible = false;
+
+        // Resetting LineRenderer
+        trajectoryLine.lineRenderer.positionCount = trajectoryLine.lineSegmentCount;
     }
 
     void Aim()
     {
-    
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        // Some coordinates changes
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f; // Ensure the Z-coordinate is zero
 
-        Vector3 mouseMovement = new Vector3(mouseX, mouseY, 0);
-        Vector3 worldPosition = currentProjectile.transform.position + mouseMovement;
-
-        Vector3 aimDirection = worldPosition - launchPoint.position;
+        Vector3 aimDirection = launchPoint.position - mouseWorldPosition;
         float stretchDistance = aimDirection.magnitude;
 
         if (stretchDistance > maxStretch)
@@ -64,12 +66,17 @@ public class SlingshotScript : MonoBehaviour
             aimDirection = aimDirection.normalized * maxStretch;
         }
 
-        currentProjectile.transform.position = launchPoint.position + aimDirection;
+        currentProjectile.transform.position = launchPoint.position - aimDirection;
+
+        // Calculate the launch velocity
+        Vector2 launchVelocity = (aimDirection.normalized * (stretchDistance / maxStretch) * launchForce);
+
+        trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
     }
 
     void LaunchProjectile()
     {
-        isAiming = false; 
+        isAiming = false;
 
         Rigidbody2D rb = currentProjectile.GetComponent<Rigidbody2D>();
         if (rb == null) return;
@@ -83,5 +90,8 @@ public class SlingshotScript : MonoBehaviour
         currentProjectile = null;
 
         Cursor.visible = initialCursorVisibility;
+
+        // Clear trajectory line
+        trajectoryLine.ClearTrajectory();
     }
 }
