@@ -6,10 +6,6 @@ public class LevelManager : MonoBehaviour
 {
     public BallCount ballCount;
     public int balls;
-    private void Update()
-    {
-        Debug.Log(ballCount.GetBallCount());
-    }
     void Start()
     {
         if (ballCount != null)
