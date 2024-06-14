@@ -2769,7 +2769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  nextSceneName: Level3
+  nextSceneName: Level4
 --- !u!212 &2141064260
 SpriteRenderer:
   m_ObjectHideFlags: 0

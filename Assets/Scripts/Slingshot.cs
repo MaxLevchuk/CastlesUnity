@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class SlingshotScript : MonoBehaviour
 {
@@ -7,33 +6,41 @@ public class SlingshotScript : MonoBehaviour
     public Transform launchPoint;
     public float launchForce = 10f;
     public float maxStretch = 3f;
+    public float minStretch = 0.5f;
     private GameObject currentProjectile;
     private bool isAiming = false;
 
-   
+    // Trajectory property
+    private TrajectoryLine trajectoryLine;
+
     private bool initialCursorVisibility;
+
+    public BallCount ballCount;
 
     void Start()
     {
-     
         initialCursorVisibility = Cursor.visible;
+        trajectoryLine = GetComponent<TrajectoryLine>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && currentProjectile == null)
+        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Проверка паузы
         {
-            StartAiming();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartAiming();
+            }
 
-        if (Input.GetMouseButton(0) && isAiming)
-        {
-            Aim();
-        }
+            if (Input.GetMouseButton(0) && isAiming)
+            {
+                Aim();
+            }
 
-        if (Input.GetMouseButtonUp(0) && isAiming)
-        {
-            LaunchProjectile();
+            if (Input.GetMouseButtonUp(0) && isAiming)
+            {
+                LaunchProjectile();
+            }
         }
     }
 
@@ -43,13 +50,14 @@ public class SlingshotScript : MonoBehaviour
         currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
 
-     
         Cursor.visible = false;
+
+        // Resetting LineRenderer
+        trajectoryLine.lineRenderer.positionCount = trajectoryLine.lineSegmentCount;
     }
 
     void Aim()
     {
-    
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
@@ -65,23 +73,48 @@ public class SlingshotScript : MonoBehaviour
         }
 
         currentProjectile.transform.position = launchPoint.position + aimDirection;
+
+        Vector2 launchVelocity = (aimDirection.normalized * (stretchDistance / maxStretch) * launchForce);
+
+        trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
     }
 
     void LaunchProjectile()
     {
-        isAiming = false; 
+        isAiming = false;
+
+        Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
+        float stretchDistance = (launchPoint.position - currentProjectile.transform.position).magnitude;
+
+      
+        if (stretchDistance < minStretch)
+        {
+            Destroy(currentProjectile);
+            currentProjectile = null;
+            Cursor.visible = initialCursorVisibility;
+            trajectoryLine.ClearTrajectory();
+            return;
+        }
 
         Rigidbody2D rb = currentProjectile.GetComponent<Rigidbody2D>();
         if (rb == null) return;
         rb.isKinematic = false;
 
-        Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
-        float launchForceMultiplier = Mathf.Clamp((launchPoint.position - currentProjectile.transform.position).magnitude / maxStretch, 0.5f, 1f);
-
+        float launchForceMultiplier = Mathf.Clamp(stretchDistance / maxStretch, 0.5f, 1f);
         rb.AddForce(launchDirection * launchForceMultiplier * launchForce, ForceMode2D.Impulse);
 
         currentProjectile = null;
 
         Cursor.visible = initialCursorVisibility;
+        trajectoryLine.ClearTrajectory();
+
+        if (ballCount != null)
+        {
+            ballCount.RemoveBall();
+            if (ballCount.GetBallCount() <= 0)
+            {
+                ballCount.NoBallsLeft();
+            }
+        }
     }
 }

@@ -4,11 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Projectile
   - Wall
   - Score
   - Target
   - Chain
+  - Ball
+  - ReplacePrefab
+  - BallCount
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - P1Ball
   - P2Ball
   - Chains
-  - 
+  - Lianes
   - 
   - 
   - 
