@@ -27,12 +27,12 @@ public class TrajectoryLine : MonoBehaviour
             new GradientColorKey[]
             {
                 new GradientColorKey(new Color(0.5f, 0.8f, 1f, 1f), 0.0f),
-                new GradientColorKey(Color.clear, 1.0f) 
+                new GradientColorKey(Color.clear, 1.0f)
             },
             new GradientAlphaKey[]
             {
-                new GradientAlphaKey(1.0f, 0.0f), 
-                new GradientAlphaKey(0.0f, 0.5f) 
+                new GradientAlphaKey(1.0f, 0.0f),
+                new GradientAlphaKey(0.0f, 0.5f)
             }
         );
         lineRenderer.colorGradient = gradient;
@@ -42,7 +42,7 @@ public class TrajectoryLine : MonoBehaviour
     {
         Vector3[] points = new Vector3[lineSegmentCount];
         Vector2 currentPosition = startPosition;
-        Vector2 velocity = initialVelocity;
+        Vector2 velocity = -initialVelocity; // Invert the initial velocity
 
         for (int i = 0; i < lineSegmentCount; i++)
         {
@@ -50,7 +50,7 @@ public class TrajectoryLine : MonoBehaviour
             points[i] = currentPosition + velocity * t + 0.5f * Physics2D.gravity * (t * t);
 
             // Overlaying the max distance length over further stretching
-            if(Vector2.Distance(startPosition, points[i]) > maxTrajectoryDistance)
+            if (Vector2.Distance(startPosition, points[i]) > maxTrajectoryDistance)
             {
                 Vector2 direction = ((Vector2)points[i] - startPosition).normalized;
                 points[i] = (Vector3)(startPosition + direction * maxTrajectoryDistance);
@@ -70,4 +70,3 @@ public class TrajectoryLine : MonoBehaviour
         lineRenderer.positionCount = 0;
     }
 }
-

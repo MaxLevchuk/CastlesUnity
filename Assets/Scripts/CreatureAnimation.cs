@@ -81,7 +81,7 @@ public class CreatureAnimation : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log(rb.velocity.y);
+   
     }
 
     private void StartFlying()

@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Level2");
+        SceneManager.LoadSceneAsync("Level4");
 
     }
     public void PlayMultiplayerGame()
