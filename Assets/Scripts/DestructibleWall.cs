@@ -8,7 +8,7 @@ public class DestructibleWall : MonoBehaviour
     public float destructionForceThreshold = 10f; 
     private bool isDestroyed = false;
 
-    public BallCount ballCount;
+    private BallCount ballCount;
 
     private void Start()
     {
@@ -56,6 +56,10 @@ public class DestructibleWall : MonoBehaviour
         }
 
         Destroy(gameObject);
-        ballCount.NoBallsLeft();
+        if (ballCount.GetBallCount()<=0)
+        {
+            ballCount.NoBallsLeft();
+        }
+        
     }
 }

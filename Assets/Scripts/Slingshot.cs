@@ -15,12 +15,14 @@ public class SlingshotScript : MonoBehaviour
 
     private bool initialCursorVisibility;
 
-    public BallCount ballCount;
+    private BallCount ballCount;
 
     void Start()
     {
         initialCursorVisibility = Cursor.visible;
         trajectoryLine = GetComponent<TrajectoryLine>();
+        ballCount = FindObjectOfType<BallCount>();
+
     }
 
     void Update()
