@@ -27,7 +27,7 @@ public class SlingshotScript : MonoBehaviour
 
     void Update()
     {
-        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Проверка паузы
+        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Pause check
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -51,6 +51,7 @@ public class SlingshotScript : MonoBehaviour
         isAiming = true;
         currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
+        currentProjectile.GetComponent<Collider2D>().enabled = false;
 
         Cursor.visible = false;
 
@@ -84,6 +85,7 @@ public class SlingshotScript : MonoBehaviour
     void LaunchProjectile()
     {
         isAiming = false;
+        currentProjectile.GetComponent<Collider2D>().enabled = true;
 
         Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
         float stretchDistance = (launchPoint.position - currentProjectile.transform.position).magnitude;

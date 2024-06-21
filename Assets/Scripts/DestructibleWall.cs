@@ -5,7 +5,7 @@ public class DestructibleWall : MonoBehaviour
 {
     public int ScoreByDestroy;
     public GameObject DestroyedWallPrefab;
-    public float destructionForceThreshold = 10f; 
+    public float destructionForceThreshold = 10f;
     private bool isDestroyed = false;
 
     private BallCount ballCount;
@@ -14,9 +14,9 @@ public class DestructibleWall : MonoBehaviour
     {
         ballCount = FindObjectOfType<BallCount>();
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-  
         if (isDestroyed) return;
 
         if (collision.rigidbody == null)
@@ -32,8 +32,10 @@ public class DestructibleWall : MonoBehaviour
         }
     }
 
-    private void DestroyWall()
+    public void DestroyWall()
     {
+        if (isDestroyed) return;
+
         ScoreManager.instance.AddPoint(ScoreByDestroy);
         isDestroyed = true;
 
@@ -56,10 +58,10 @@ public class DestructibleWall : MonoBehaviour
         }
 
         Destroy(gameObject);
-        if (ballCount.GetBallCount()<=0)
+
+        if (ballCount.GetBallCount() <= 0)
         {
             ballCount.NoBallsLeft();
         }
-        
     }
 }

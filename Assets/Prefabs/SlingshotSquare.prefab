@@ -267,12 +267,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94c8cda5e2dc6445b5e0574d374abf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2195009469754386375, guid: ecb43cd6861a99a458edcc1bd26c9013, type: 3}
+  projectilePrefab: {fileID: 6091575217098769429, guid: e868486cd0358b54db3fe8ad19b9da4d, type: 3}
   launchPoint: {fileID: 2724732790473162101}
   launchForce: 55
   maxStretch: 2
   minStretch: 0.5
-  ballCount: {fileID: 0}
 --- !u!120 &1224430208666217972
 LineRenderer:
   serializedVersion: 2
