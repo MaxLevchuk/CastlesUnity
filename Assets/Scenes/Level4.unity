@@ -3481,6 +3481,14 @@ PrefabInstance:
       propertyPath: ballCount
       value: 
       objectReference: {fileID: 7105705127025546818}
+    - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2195009469754386375, guid: ecb43cd6861a99a458edcc1bd26c9013, type: 3}
+    - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
+      propertyPath: hitParticlesPrefab
+      value: 
+      objectReference: {fileID: 8843906653933886440, guid: e228c971f18cd864db68d5cf51c92920, type: 3}
     - target: {fileID: 8804879531361267279, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.63

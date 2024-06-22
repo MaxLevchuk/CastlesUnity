@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: c64fa124267afa14c865de2d5f7d7c9b
+guid: a1c93c951eb27d647a15eb24cc59aa71
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - DestroyedBallPrefab: {instanceID: 0}
-  - ballHitParticlesPrefab: {fileID: 8843906653933886440, guid: e228c971f18cd864db68d5cf51c92920, type: 3}
+  - hitParticles: {fileID: 92573985711736406, guid: e228c971f18cd864db68d5cf51c92920, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

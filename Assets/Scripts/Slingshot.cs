@@ -10,6 +10,9 @@ public class SlingshotScript : MonoBehaviour
     private GameObject currentProjectile;
     private bool isAiming = false;
 
+    // Particles
+    public GameObject hitParticlesPrefab;
+
     // Trajectory property
     private TrajectoryLine trajectoryLine;
 
@@ -27,7 +30,7 @@ public class SlingshotScript : MonoBehaviour
 
     void Update()
     {
-        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Pause check
+        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Проверка паузы
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -53,6 +56,13 @@ public class SlingshotScript : MonoBehaviour
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
         currentProjectile.GetComponent<Collider2D>().enabled = false;
 
+        // Attaching particles to new projectile
+        var particleCollisionScript = currentProjectile.GetComponent<BallParticleCollision>();
+        if (particleCollisionScript != null && particleCollisionScript.hitParticles == null)
+        {
+            particleCollisionScript.hitParticles = Instantiate(hitParticlesPrefab, currentProjectile.transform).GetComponent<ParticleSystem>();
+            Debug.Log("Particle system instantiated and attached to projectile");
+        }
         Cursor.visible = false;
 
         // Resetting LineRenderer
@@ -86,6 +96,7 @@ public class SlingshotScript : MonoBehaviour
     {
         isAiming = false;
         currentProjectile.GetComponent<Collider2D>().enabled = true;
+        Debug.Log("Projectile collider enabled");
 
         Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
         float stretchDistance = (launchPoint.position - currentProjectile.transform.position).magnitude;
