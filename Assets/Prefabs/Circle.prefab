@@ -306,3 +306,8 @@ MonoBehaviour:
   smallBallPrefab: {fileID: 2036158600745580059, guid: 96e34169869f9364d8ce6e8c49d42e5b, type: 3}
   smallBallCount: 3
   transformationDelay: 1
+  spreadAngle: 15
+  explosionEffectPrefab: {fileID: 8091215633268981960, guid: f69dddc63a393954ba42731c64212f19, type: 3}
+  explosionRadius: 5
+  explosionForce: 1500
+  effectDisplayTime: 1

@@ -303,8 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce3e5e1336fc714d91394cbcd1b6df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionEffectPrefab: {fileID: 0}
+  explosionEffectPrefab: {fileID: 8091215633268981960, guid: f69dddc63a393954ba42731c64212f19, type: 3}
   explosionRadius: 5
   explosionForce: 1500
   maxBounces: 3
   effectDisplayTime: 3
+  disappearTime: 8

@@ -30,7 +30,7 @@ public class SlingshotScript : MonoBehaviour
 
     void Update()
     {
-        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Проверка паузы
+        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Pause check
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -96,7 +96,6 @@ public class SlingshotScript : MonoBehaviour
     {
         isAiming = false;
         currentProjectile.GetComponent<Collider2D>().enabled = true;
-        Debug.Log("Projectile collider enabled");
 
         Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
         float stretchDistance = (launchPoint.position - currentProjectile.transform.position).magnitude;
@@ -116,7 +115,15 @@ public class SlingshotScript : MonoBehaviour
         rb.isKinematic = false;
 
         float launchForceMultiplier = Mathf.Clamp(stretchDistance / maxStretch, 0.5f, 1f);
-        rb.AddForce(launchDirection * launchForceMultiplier * launchForce, ForceMode2D.Impulse);
+        Vector2 initialVelocity = launchDirection * launchForceMultiplier * launchForce;
+        rb.AddForce(initialVelocity, ForceMode2D.Impulse);
+
+        // Ball transformation script is notified of the launch
+        var transformBallScript = currentProjectile.GetComponent<Split>();
+        if (transformBallScript != null)
+        {
+            transformBallScript.MarkAsLaunched();
+        }
 
         currentProjectile = null;
 

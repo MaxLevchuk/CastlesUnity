@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
-  radius: 2
-  force: 2000
+  radius: 5
+  force: 1500
   explodeOnCollision: 0
   effectsPrefab: {fileID: 8091215633268981960, guid: f69dddc63a393954ba42731c64212f19, type: 3}
   effectDisplayTime: 1
