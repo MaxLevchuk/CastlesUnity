@@ -4239,7 +4239,7 @@ PrefabInstance:
     - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 2195009469754386375, guid: ecb43cd6861a99a458edcc1bd26c9013, type: 3}
+      objectReference: {fileID: 6091575217098769429, guid: e868486cd0358b54db3fe8ad19b9da4d, type: 3}
     - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
       propertyPath: hitParticlesPrefab
       value: 
