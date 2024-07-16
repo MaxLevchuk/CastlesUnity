@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6753777793130613251}
   - component: {fileID: 2334315127886239866}
   - component: {fileID: 4261620512085622003}
-  - component: {fileID: -4239246475726631176}
   m_Layer: 9
   m_Name: SmallCircle
   m_TagString: Ball
@@ -32,9 +31,9 @@ Transform:
   m_GameObject: {fileID: 2036158600745580059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.74, y: 0.31, z: 0}
-  m_LocalScale: {x: 0.1893464, y: 0.18224493, z: 0.39896}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -7.35, y: 0.41, z: 0}
+  m_LocalScale: {x: 0.29, y: 0.2791235, z: 0.61104095}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.11527941, g: 0.5639087, b: 0.96981126, a: 1}
+  m_Color: {r: 0.27058828, g: 0.28820002, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -224,7 +223,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -251,18 +250,18 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.427451, g: 0.9565701, b: 1, a: 1}
-      key1: {r: 0.427451, g: 0.9565701, b: 1, a: 1}
-      key2: {r: 1, g: 1, b: 1, a: 1}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.24643202, g: 0.24173653, b: 0.80756974, a: 1}
+      key1: {r: 0.33018857, g: 0.9039649, b: 1, a: 1}
+      key2: {r: 0.33018857, g: 0.9039649, b: 1, a: 1}
+      key3: {r: 0.33018857, g: 0.9039649, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 65535
-      ctime3: 0
+      ctime1: 36623
+      ctime2: 41865
+      ctime3: 41865
       ctime4: 0
       ctime5: 0
       ctime6: 0
@@ -291,21 +290,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &-4239246475726631176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036158600745580059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce3e5e1336fc714d91394cbcd1b6df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionEffectPrefab: {fileID: 8091215633268981960, guid: f69dddc63a393954ba42731c64212f19, type: 3}
-  explosionRadius: 5
-  explosionForce: 1500
-  maxBounces: 3
-  effectDisplayTime: 3
-  disappearTime: 8

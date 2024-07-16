@@ -8,15 +8,9 @@ public class Split : MonoBehaviour
     // Number of small balls to spawn
     public int smallBallCount = 3;
     // Time delay before transformation
-    public float transformationDelay = 2f;
+    public float transformationDelay = 0.65f;
     // Angle to spread the small balls
     public float spreadAngle = 15f;
-
-    // Explosion properties
-    public GameObject explosionEffectPrefab;
-    public float explosionRadius = 5.0f;
-    public float explosionForce = 1500.0f;
-    public float effectDisplayTime = 3.0f;
 
     private Rigidbody2D rb;
     private bool isLaunched = false;
@@ -45,15 +39,7 @@ public class Split : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!hasCollided)
-        {
-            hasCollided = true;
-
-            if (Time.time - launchTime < transformationDelay)
-            {
-                ExplodeBall();
-            }
-        }
+        hasCollided = true;
     }
 
     private void TransformIntoSmallBalls()
@@ -75,36 +61,5 @@ public class Split : MonoBehaviour
 
             smallRb.velocity = spreadDirection;
         }
-    }
-
-    // Explosion logic
-    private void ExplodeBall()
-    {
-        if (explosionEffectPrefab != null)
-        {
-            GameObject effect = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(effect, effectDisplayTime);
-        }
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-        foreach (Collider2D collider in colliders)
-        {
-            Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                Vector2 direction = rb.transform.position - transform.position;
-                float distance = direction.magnitude;
-                float explosionForceAdjusted = explosionForce / (distance + 1);
-                rb.AddForce(direction.normalized * explosionForceAdjusted);
-            }
-
-            DestructibleWall destructibleWall = collider.GetComponent<DestructibleWall>();
-            if (destructibleWall != null)
-            {
-                destructibleWall.DestroyWall();
-            }
-        }
-
-        Destroy(gameObject);
     }
 }
