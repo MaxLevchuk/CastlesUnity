@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("LevelMenu");
 
     }
+    public void LoadOptions()
+    {
+        SceneManager.LoadSceneAsync("Settings");
+
+    }
     public void PlayMultiplayerGame()
     {
         SceneManager.LoadSceneAsync("Level2multi");
