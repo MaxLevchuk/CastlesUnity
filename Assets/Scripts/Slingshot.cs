@@ -2,13 +2,14 @@
 
 public class SlingshotScript : MonoBehaviour
 {
+    public static SlingshotScript Instance { get; private set; }
     public GameObject projectilePrefab;
     public Transform launchPoint;
     public float launchForce = 10f;
     public float maxStretch = 3f;
     public float minStretch = 0.5f;
     private GameObject currentProjectile;
-    private bool isAiming = false;
+    public bool isAiming = false;
 
     // Particles
     public GameObject hitParticlesPrefab;
@@ -20,8 +21,13 @@ public class SlingshotScript : MonoBehaviour
 
     private BallCount ballCount;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
+        
         initialCursorVisibility = Cursor.visible;
         trajectoryLine = GetComponent<TrajectoryLine>();
         ballCount = FindObjectOfType<BallCount>();
@@ -33,7 +39,7 @@ public class SlingshotScript : MonoBehaviour
         if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Pause check
         {
             if (Input.GetMouseButtonDown(0))
-            {
+            {   
                 StartAiming();
             }
 

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BallCount : MonoBehaviour
 {
+    public static BallCount Instance;
+    public bool isTutorial = false; 
     public Image ballImagePrefab; 
     private List<Image> ballImages = new List<Image>();
     private int ballCount;
@@ -13,6 +15,10 @@ public class BallCount : MonoBehaviour
     private float delayTime = 6f;
     private Coroutine loadSceneCoroutine;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     public void SetBallCount(int count)
     {
         ballCount = count;
@@ -33,9 +39,19 @@ public class BallCount : MonoBehaviour
     {
         for (int i = 0; i < ballCount; i++)
         {
-            Image newBallImage = Instantiate(ballImagePrefab, transform);
-            ballImages.Add(newBallImage); 
+            if(isTutorial == false)
+            {
+                Image newBallImage = Instantiate(ballImagePrefab, transform);
+                ballImages.Add(newBallImage);
+            }
+            else
+            {             
+                ballImages.Add(ballImagePrefab);
+            }
+
+
         }
+
     }
 
     public void RemoveBall()

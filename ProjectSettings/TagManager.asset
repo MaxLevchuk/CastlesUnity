@@ -13,6 +13,8 @@ TagManager:
   - BallCount
   - LoadingText
   - ProgressBar
+  - FlyInObject
+  - Options
   layers:
   - Default
   - TransparentFX

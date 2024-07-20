@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
+    public static Target Instance { get; private set; }
     public float rotationSpeed = 100f;
     public string nextSceneName;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {   
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
