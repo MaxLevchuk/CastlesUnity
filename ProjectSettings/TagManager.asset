@@ -15,6 +15,7 @@ TagManager:
   - ProgressBar
   - FlyInObject
   - Options
+  - Ground
   layers:
   - Default
   - TransparentFX
