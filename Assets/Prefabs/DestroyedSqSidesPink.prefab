@@ -353,6 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7003417322760152276}
+  - component: {fileID: -3682670512202485008}
   m_Layer: 7
   m_Name: DestroyedSqSidesPink
   m_TagString: Untagged
@@ -378,6 +379,24 @@ Transform:
   - {fileID: 1232238638767776378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3682670512202485008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244928903412967322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe9b16ba3d1e774b81443c1b2bbb89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 0}
+  sfx1: {fileID: 8300000, guid: 209bfecf47f631745b6a6452060a2dba, type: 3}
+  sfx2: {fileID: 8300000, guid: a4351ee0132d2df49bae1c3604937546, type: 3}
+  sfx3: {fileID: 8300000, guid: 9940d0bc5e713f24a8786c3b3bbd86dd, type: 3}
+  sfx4: {fileID: 8300000, guid: 377b9a8700a381e41a8154f14ec0a2cb, type: 3}
+  volume: 0.2
 --- !u!1 &7841913418362104045
 GameObject:
   m_ObjectHideFlags: 0

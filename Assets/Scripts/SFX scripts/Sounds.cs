@@ -47,9 +47,9 @@ public class Sounds : MonoBehaviour
                 src.enabled = true;
             }
 
-       
-            float pitch = (float)rand.NextDouble() * 5f + 4f; // рандомна тональність звуку 0.5 до 2.5
-            
+
+            //float pitch = (float)rand.NextDouble() * 5f + 4f; // рандомна тональність звуку 0.5 до 2.5
+            float pitch = (float)rand.NextDouble() * 0.2f + 0.8f;
             src.pitch = pitch;
 
             src.Play();

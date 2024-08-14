@@ -14,7 +14,7 @@ public class SlingshotScript : MonoBehaviour
     // Particles
     public GameObject hitParticlesPrefab;
 
-    // Trajectory property
+    //  Trajectory property
     private TrajectoryLine trajectoryLine;
 
     private bool initialCursorVisibility;
