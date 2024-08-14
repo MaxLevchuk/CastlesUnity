@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LavaLevels/Level9.unity
     guid: d9839192e32867d4995d3090df9395b3
+  - enabled: 1
+    path: Assets/Scenes/GreenLevels/Level3.unity
+    guid: dcbb2312038249e4a9ac6c6382759f91
   m_configObjects: {}
