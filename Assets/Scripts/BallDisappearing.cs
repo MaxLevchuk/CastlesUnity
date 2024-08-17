@@ -1,48 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class BallDisappearing : MonoBehaviour
 {
-    public float disappearTime = 8f;
+    public float disappearTime = 8f; 
     private SpriteRenderer spriteRenderer;
-    private float collisionTime;
-    bool isTouched = false;
+    private Light2D ballLight;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();    
+        ballLight = GetComponent<Light2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        StartCoroutine(DisappearAfterTime(disappearTime));
     }
 
-    void Update()
+    private IEnumerator DisappearAfterTime(float waitTime)
     {
-        if (isTouched)
-        {   
-            float elapsedTime = Time.time - collisionTime;
+        yield return new WaitForSeconds(waitTime); // w8 to start dissapearing
 
-            if (elapsedTime >= 7f && elapsedTime < disappearTime)
-            {
-                float fadeElapsedTime = elapsedTime - 7f; 
-                float currentAlpha = Mathf.Lerp(1f, 0f, fadeElapsedTime / (disappearTime - 7f));
-                Color newColor = spriteRenderer.color;
-                newColor.a = currentAlpha;
-                spriteRenderer.color = newColor;
-                gameObject.GetComponent<TrailRenderer>().enabled = false;
-            }
+        float fadeDuration = 1f; // time to dissapear
+        float elapsedTime = 0f;
 
-            if (elapsedTime >= disappearTime)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+        // hide trail
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision != null)
+        while (elapsedTime < fadeDuration)
         {
-            isTouched = true;
-            collisionTime = Time.time;
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration); // alpha color change
+            Color newColor = spriteRenderer.color;
+            newColor.a = alpha;
+            spriteRenderer.color = newColor;
+            ballLight.color = newColor;
+            yield return null;
         }
+
+        Destroy(gameObject); 
     }
 }

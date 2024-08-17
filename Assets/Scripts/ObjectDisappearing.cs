@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
-
+using UnityEngine.Rendering.Universal;
 public class ObjectDisappearing : MonoBehaviour
 {
     public float disappearTime = 4f;
 
-    
+   private Light2D objLight;
     private SpriteRenderer spriteRenderer;
 
     private float creationTime;
 
     void Start()
     {
-      
+        objLight = GetComponent<Light2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
      
@@ -29,7 +29,7 @@ public class ObjectDisappearing : MonoBehaviour
         Color newColor = spriteRenderer.color;
         newColor.a = currentAlpha;
         spriteRenderer.color = newColor;
-
+        objLight.color = newColor;
         if (elapsedTime >= disappearTime)
         {
             Destroy(gameObject);
