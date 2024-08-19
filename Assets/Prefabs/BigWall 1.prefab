@@ -49,8 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 10
-  DestroyedWallPrefab: {fileID: 4897563600021876158, guid: d9eea30d894fbd440856f2e1b84326aa, type: 3}
-  destructionForceThreshold: 12
+  DestructibleObjectPrefab: {fileID: 4897563600021876158, guid: d9eea30d894fbd440856f2e1b84326aa, type: 3}
+  destructionForceThreshold: 10
+  maxHealth: 20
 --- !u!212 &8088875966418659108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +94,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 794c1486352a87047b92667942371c1d, type: 3}
-  m_Color: {r: 0.86018026, g: 0.21150766, b: 0.9150943, a: 0.78039217}
+  m_Color: {r: 1, g: 0, b: 0.8235294, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.776
-  m_Color: {r: 1, g: 0, b: 0.8235294, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.82352924, a: 1}
   m_Intensity: 6.13
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

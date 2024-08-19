@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: 1b72d822b0b195f4980667801172a442
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: 5e42f2f0be080fd45b327f5924f02f7f
   - enabled: 1
@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GreenLevels/Level3.unity
     guid: dcbb2312038249e4a9ac6c6382759f91
+  - enabled: 1
+    path: Assets/Scenes/NeonLevels/Level2.unity
+    guid: 72e0ec1351f1b9c47a8f7261b4a1c70b
+  - enabled: 1
+    path: Assets/Scenes/LevelLoader/LevelLoaderScene.unity
+    guid: 260a8a2bd2e4dab4dac345413d4da854
   m_configObjects: {}

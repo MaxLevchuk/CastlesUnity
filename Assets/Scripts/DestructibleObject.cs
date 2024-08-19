@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public class DestructibleWall : MonoBehaviour
+public class DestructibleObject : MonoBehaviour
 {
     public int ScoreByDestroy;
-    public GameObject DestroyedWallPrefab;
+    public GameObject DestructibleObjectPrefab;
     public float destructionForceThreshold = 10f;
     private bool isDestroyed = false;
 
@@ -28,23 +28,23 @@ public class DestructibleWall : MonoBehaviour
         float collisionForce = collision.relativeVelocity.magnitude * collision.rigidbody.mass;
         if (collisionForce > destructionForceThreshold)
         {
-            DestroyWall();
+            DestroyObject();
         }
     }
 
-    public void DestroyWall()
+    public void DestroyObject()
     {
         if (isDestroyed) return;
 
         ScoreManager.instance.AddPoint(ScoreByDestroy);
         isDestroyed = true;
 
-        if (DestroyedWallPrefab != null)
+        if (DestructibleObjectPrefab != null)
         {
-            GameObject destroyedWall = Instantiate(DestroyedWallPrefab, transform.position, transform.rotation);
+            GameObject destroyedObject = Instantiate(DestructibleObjectPrefab, transform.position, transform.rotation);
 
             Rigidbody2D originalRigidbody = GetComponent<Rigidbody2D>();
-            Rigidbody2D[] destroyedRigidbodies = destroyedWall.GetComponentsInChildren<Rigidbody2D>();
+            Rigidbody2D[] destroyedRigidbodies = destroyedObject.GetComponentsInChildren<Rigidbody2D>();
 
             foreach (var rb in destroyedRigidbodies)
             {

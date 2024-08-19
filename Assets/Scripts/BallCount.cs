@@ -79,7 +79,12 @@ public class BallCount : MonoBehaviour
             elapsedTime += Time.deltaTime;
         }
 
-        SceneManager.LoadScene("Level4");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        int currentLevelNumber = int.Parse(currentSceneName.Substring(5));
+        PlayerPrefs.SetInt("LevenNumber", currentLevelNumber);
+        SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+
+    
     }
 
     public void NoBallsLeft()

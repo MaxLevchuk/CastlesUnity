@@ -32,6 +32,8 @@ public class LevelButton : MonoBehaviour
     void OnButtonClick()
     {
         Debug.Log("Selected Level: " + level.ToString());
-        SceneManager.LoadSceneAsync("Level" + level.ToString());
+
+        PlayerPrefs.SetInt("LevenNumber", level);
+        SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
     }
 }

@@ -73,10 +73,10 @@ public class Explode : MonoBehaviour
         // Destroy destructible objects and collect rigidbodies
         foreach (Collider2D collider in colliders)
         {
-            DestructibleWall destructibleWall = collider.GetComponent<DestructibleWall>();
+            DestructibleObject destructibleWall = collider.GetComponent<DestructibleObject>();
             if (destructibleWall != null)
             {
-                destructibleWall.DestroyWall(); // Call destruction method directly
+                destructibleWall.DestroyObject(); // Call destruction method directly
             }
         }
 
