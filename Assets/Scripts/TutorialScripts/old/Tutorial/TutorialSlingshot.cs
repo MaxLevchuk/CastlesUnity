@@ -31,8 +31,9 @@ public class TutorialSlingshot : MonoBehaviour
 
     void Update()
     {
-        if (canShoot) // Tutorial check 
+        if (canShoot && Time.timeScale != 0) // Tutorial check 
         {
+           
             if (Input.GetMouseButtonDown(0))
             {
                 StartAiming();
@@ -48,6 +49,7 @@ public class TutorialSlingshot : MonoBehaviour
             {
                 LaunchProjectile();
             }
+             
         }
     }
 

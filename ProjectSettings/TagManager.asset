@@ -62,6 +62,9 @@ TagManager:
   - name: Player
     uniqueID: 1937637251
     locked: 0
+  - name: ObjectLight
+    uniqueID: 1354986905
+    locked: 0
   - name: Destruction obj
     uniqueID: 2285671323
     locked: 0

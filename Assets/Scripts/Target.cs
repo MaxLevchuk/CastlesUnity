@@ -1,13 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
+
     public static Target Instance { get; private set; }
     public float rotationSpeed = 100f;
-    public string nextSceneName;
+    // public string nextSceneName;
+    
+    private string previousSceneName;
 
     private void Awake()
     {
@@ -21,15 +24,37 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            if (!string.IsNullOrEmpty(nextSceneName))
+
+           string previousSceneName = SceneManager.GetActiveScene().name;
+            PlayerPrefs.SetInt("LevenNumber", GetNextLevelNumber(previousSceneName));
+            SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+
+                
+            /* if (!string.IsNullOrEmpty(nextSceneName))
             {
                 SceneManager.LoadScene(nextSceneName);
             }
             else
             {
                 Debug.LogError("Next scene name is not set.");
-            }
+            }*/
         }
     }
+    public int GetNextLevelNumber(string input)
+    {
+        string prefix = "Level";
+        if (input.StartsWith(prefix))
+        {
+            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber)) // delete word "Level" and string to int
+            {
+                return levelNumber + 1;//next level
+            }   
+        }
+
+        return 0;
+    }
+
+
+
 }
 

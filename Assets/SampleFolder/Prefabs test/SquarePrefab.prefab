@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 0
-  DestroyedWallPrefab: {fileID: 3581308177494811335, guid: 58bd5b6319706d14cae60e37b730faca, type: 3}
+  DestructibleObjectPrefab: {fileID: 3581308177494811335, guid: 58bd5b6319706d14cae60e37b730faca, type: 3}
   destructionForceThreshold: 10
 --- !u!61 &3610903697885227519
 BoxCollider2D:
@@ -191,7 +191,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.000088024324, y: 0.53317994}
+  m_ConnectedAnchor: {x: -0.000088024324, y: 0.53317916}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &2083141928867709216
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 0
-  DestroyedWallPrefab: {fileID: 3581308177494811335, guid: 58bd5b6319706d14cae60e37b730faca, type: 3}
+  DestructibleObjectPrefab: {fileID: 3581308177494811335, guid: 58bd5b6319706d14cae60e37b730faca, type: 3}
   destructionForceThreshold: 10
 --- !u!61 &6598089191064937315
 BoxCollider2D:
@@ -385,7 +385,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00011984035, y: -0.5331026}
+  m_ConnectedAnchor: {x: -0.00011984035, y: -0.53310335}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &2203549411634707687
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 0
-  DestroyedWallPrefab: {fileID: 8784093280074021711, guid: b09f5d696e1246e439ddcab82b552aed, type: 3}
+  DestructibleObjectPrefab: {fileID: 8784093280074021711, guid: b09f5d696e1246e439ddcab82b552aed, type: 3}
   destructionForceThreshold: 10
 --- !u!61 &2338884426088463905
 BoxCollider2D:
@@ -579,7 +579,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5321378, y: -0.0000010604426}
+  m_ConnectedAnchor: {x: 0.53213835, y: -0.000001192998}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &4541897526457314563
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 25
-  DestroyedWallPrefab: {fileID: 7985757542277497381, guid: 694034d122766b64a8ffaedd435ef828, type: 3}
+  DestructibleObjectPrefab: {fileID: 7985757542277497381, guid: 694034d122766b64a8ffaedd435ef828, type: 3}
   destructionForceThreshold: 10
 --- !u!50 &8390517073535589264
 Rigidbody2D:
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 0
-  DestroyedWallPrefab: {fileID: 8784093280074021711, guid: b09f5d696e1246e439ddcab82b552aed, type: 3}
+  DestructibleObjectPrefab: {fileID: 8784093280074021711, guid: b09f5d696e1246e439ddcab82b552aed, type: 3}
   destructionForceThreshold: 10
 --- !u!61 &955375539723559613
 BoxCollider2D:
@@ -1034,6 +1034,6 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.53219825, y: 0.0000042417705}
+  m_ConnectedAnchor: {x: -0.53219825, y: 0.0000034464385}
   m_DampingRatio: 0
   m_Frequency: 0
