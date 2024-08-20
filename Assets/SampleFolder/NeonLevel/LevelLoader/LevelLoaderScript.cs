@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoaderScript : MonoBehaviour
 {
     private string nextSceneName;
     private string previousSceneName;
+    public Text levelText;
     private void Start()
     {
-       
         Time.timeScale = 0f;
         Animator animator = GetComponent<Animator>();
         animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         nextSceneName = "Level" + PlayerPrefs.GetInt("LevenNumber");
         previousSceneName = SceneManager.GetActiveScene().name;
-
+        levelText.text = "Level " + PlayerPrefs.GetInt("LevenNumber"); 
     }
     public void LoadNextScene()
     {
         //in
 
-        if (!string.IsNullOrEmpty(previousSceneName))
+        if (!string.IsNullOrEmpty(nextSceneName))
         {
 
             SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
