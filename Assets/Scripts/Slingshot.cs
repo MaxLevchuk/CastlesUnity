@@ -36,8 +36,9 @@ public class SlingshotScript : MonoBehaviour
 
     void Update()
     {
-        if (ballCount.GetBallCount() > 0 && !PauseManager.isPaused) // Pause check
+        if (ballCount.GetBallCount() > 0 && Time.timeScale != 0) // Pause check
         {
+           
             if (Input.GetMouseButtonDown(0))
             {   
                 StartAiming();
@@ -52,6 +53,7 @@ public class SlingshotScript : MonoBehaviour
             {
                 LaunchProjectile();
             }
+            
         }
     }
 
@@ -77,25 +79,28 @@ public class SlingshotScript : MonoBehaviour
 
     void Aim()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
 
-        Vector3 mouseMovement = new Vector3(mouseX, mouseY, 0);
-        Vector3 worldPosition = currentProjectile.transform.position + mouseMovement;
+        
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+            Vector3 mouseMovement = new Vector3(mouseX, mouseY, 0);
+            Vector3 worldPosition = currentProjectile.transform.position + mouseMovement;
 
-        Vector3 aimDirection = worldPosition - launchPoint.position;
-        float stretchDistance = aimDirection.magnitude;
+            Vector3 aimDirection = worldPosition - launchPoint.position;
+            float stretchDistance = aimDirection.magnitude;
 
-        if (stretchDistance > maxStretch)
-        {
-            aimDirection = aimDirection.normalized * maxStretch;
-        }
+            if (stretchDistance > maxStretch)
+            {
+                aimDirection = aimDirection.normalized * maxStretch;
+            }
 
-        currentProjectile.transform.position = launchPoint.position + aimDirection;
+            currentProjectile.transform.position = launchPoint.position + aimDirection;
 
-        Vector2 launchVelocity = (aimDirection.normalized * (stretchDistance / maxStretch) * launchForce);
+            Vector2 launchVelocity = (aimDirection.normalized * (stretchDistance / maxStretch) * launchForce);
 
-        trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
+            trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
+        
+      
     }
 
     void LaunchProjectile()
