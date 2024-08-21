@@ -12,9 +12,13 @@ public class BallDisappearing : MonoBehaviour
     {
         ballLight = GetComponent<Light2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(DisappearAfterTime(disappearTime));
+      
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(DisappearAfterTime(disappearTime));
+    }
     private IEnumerator DisappearAfterTime(float waitTime)
     {
         yield return new WaitForSeconds(waitTime); // w8 to start dissapearing

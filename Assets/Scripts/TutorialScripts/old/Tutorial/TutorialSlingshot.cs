@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialSlingshot : MonoBehaviour
@@ -117,7 +118,8 @@ public class TutorialSlingshot : MonoBehaviour
         Rigidbody2D rb = currentProjectile.GetComponent<Rigidbody2D>();
         if (rb == null) return;
         rb.isKinematic = false;
-
+        BallDisappearing bd = currentProjectile.GetComponent<BallDisappearing>();        // enable ball disappearing and disable kinematic
+        bd.enabled = true;
         float launchForceMultiplier = Mathf.Clamp(stretchDistance / maxStretch, 0.5f, 1f);
         Vector2 initialVelocity = launchDirection * launchForceMultiplier * launchForce;
         rb.AddForce(initialVelocity, ForceMode2D.Impulse);
