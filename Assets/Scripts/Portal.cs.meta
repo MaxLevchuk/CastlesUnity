@@ -3,7 +3,10 @@ guid: 6a3f782bdff7197498c1855a1c808584
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - connectedPortal: {instanceID: 0}
+  - enterPortalEffect: {instanceID: 0}
+  - exitPortalEffect: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

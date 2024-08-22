@@ -4,10 +4,9 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Transform connectedPortal;
-    public bool isBluePortal; 
-    public float teleportCooldown = 0.5f; 
+    public float teleportCooldown = 0.5f;
 
-    private bool canTeleport = true; 
+    private bool canTeleport = true;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,7 +45,7 @@ public class Portal : MonoBehaviour
         canTeleport = true;
         connectedPortalScript.canTeleport = true;
 
-      
+
         Destroy(ball.gameObject, 1f);
     }
 
@@ -54,9 +53,9 @@ public class Portal : MonoBehaviour
     {
         foreach (var component in ball.GetComponents<MonoBehaviour>())
         {
-           
-               component.enabled = false;
-           
+
+            component.enabled = false;
+
         }
 
         ball.GetComponent<Collider2D>().enabled = false;
