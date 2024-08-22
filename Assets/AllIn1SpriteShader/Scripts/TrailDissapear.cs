@@ -1,22 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
-public class BallDisappearing : MonoBehaviour
+public class TrailDissapear : MonoBehaviour
 {
-    public float disappearTime = 8f;
-    private SpriteRenderer spriteRenderer;
-    private Light2D ballLight;
-    public TrailRenderer trailRenderer;
 
-    void Start()
-    {
-        ballLight = GetComponent<Light2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        
-    }
-
-    private void OnEnable()
+    /*private void OnEnable()
     {
         StartCoroutine(DisappearAfterTime(disappearTime));
     }
@@ -28,8 +17,7 @@ public class BallDisappearing : MonoBehaviour
         float elapsedTime = 0f;
 
 
-        // hide trail
-        trailRenderer.enabled = false;
+
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -40,8 +28,7 @@ public class BallDisappearing : MonoBehaviour
             ballLight.color = newColor;
             yield return null;
         }
-    
 
         Destroy(gameObject);
-    }
+    }*/
 }
