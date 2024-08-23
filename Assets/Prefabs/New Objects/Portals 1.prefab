@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 2083986747004933968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 2, z: 0}
+  m_LocalPosition: {x: -7, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 2157768466673839196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 4, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199,6 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedPortal: {fileID: 4594094515155127960}
   teleportCooldown: 0.1
+  entryParticlePrefab: {fileID: 5727850769296501190, guid: 8da37a982d4d3764489a54e13951f3f4, type: 3}
+  exitParticlePrefab: {fileID: 5727850769296501190, guid: e0c77c3bd6d8b214f819ede87eb2ddef, type: 3}
 --- !u!61 &6362094411122511319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -412,6 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedPortal: {fileID: 3335357936036874274}
   teleportCooldown: 0.1
+  entryParticlePrefab: {fileID: 5727850769296501190, guid: 8da37a982d4d3764489a54e13951f3f4, type: 3}
+  exitParticlePrefab: {fileID: 5727850769296501190, guid: e0c77c3bd6d8b214f819ede87eb2ddef, type: 3}
 --- !u!61 &155753064252404428
 BoxCollider2D:
   m_ObjectHideFlags: 0
