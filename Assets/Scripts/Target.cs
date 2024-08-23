@@ -28,16 +28,6 @@ public class Target : MonoBehaviour
            string previousSceneName = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetInt("LevenNumber", GetNextLevelNumber(previousSceneName));
             SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
-
-                
-            /* if (!string.IsNullOrEmpty(nextSceneName))
-            {
-                SceneManager.LoadScene(nextSceneName);
-            }
-            else
-            {
-                Debug.LogError("Next scene name is not set.");
-            }*/
         }
     }
     public int GetNextLevelNumber(string input)
