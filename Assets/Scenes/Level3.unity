@@ -636,7 +636,7 @@ PrefabInstance:
     - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 2195009469754386375, guid: ecb43cd6861a99a458edcc1bd26c9013, type: 3}
+      objectReference: {fileID: 2195009469754386375, guid: c4665e556dadd8347aad886bf83356df, type: 3}
     - target: {fileID: 7204392884195538958, guid: ad05c2b8443e0394f872ff344dbf2357, type: 3}
       propertyPath: hitParticlesPrefab
       value: 
@@ -900,7 +900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  nextSceneName: Level3
 --- !u!212 &723707599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1142,6 +1141,8 @@ MonoBehaviour:
   sfx1: {fileID: 0}
   sfx2: {fileID: 0}
   sfx3: {fileID: 0}
+  sfx4: {fileID: 0}
+  volume: 1
 --- !u!4 &809265456
 Transform:
   m_ObjectHideFlags: 0
@@ -3104,6 +3105,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 68c8bfc0280728b4195221e2b6f94d77, type: 3}
+    - target: {fileID: 3130657268924069959, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
     - target: {fileID: 3938098255438805426, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
       propertyPath: m_Constraints
       value: 0
@@ -3124,6 +3129,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4696644112058234410, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 2489880962204362686, guid: a1780f56697ad164ca3e135d043f494e, type: 3}
     - target: {fileID: 5298650789584597506, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
       propertyPath: m_Mass
       value: 10
@@ -3184,6 +3193,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SqGroup (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7071240810869576970, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
+    - target: {fileID: 7678962416846072088, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
     - target: {fileID: 8155203930322408454, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.046
@@ -3204,6 +3221,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9054816326433476849, guid: 718630f392067ee4fb53bf872b4e63c4, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

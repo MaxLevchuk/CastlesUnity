@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 5
-  DestroyedWallPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
+  DestructibleObjectPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
   destructionForceThreshold: 2
 --- !u!212 &7863338478921176243
 SpriteRenderer:
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 10
-  DestroyedWallPrefab: {fileID: 410836091982770476, guid: 63a39b42b4e32f34c9d7d3b59d4e174f, type: 3}
+  DestructibleObjectPrefab: {fileID: 2489880962204362686, guid: a1780f56697ad164ca3e135d043f494e, type: 3}
   destructionForceThreshold: 12
 --- !u!212 &5465179865701682957
 SpriteRenderer:
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 5
-  DestroyedWallPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
+  DestructibleObjectPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
   destructionForceThreshold: 2
 --- !u!212 &2625735544001739262
 SpriteRenderer:
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 5
-  DestroyedWallPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
+  DestructibleObjectPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
   destructionForceThreshold: 2
 --- !u!212 &3225495698956355052
 SpriteRenderer:
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 5
-  DestroyedWallPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
+  DestructibleObjectPrefab: {fileID: 3244928903412967322, guid: 291a305ee91c3ba48a40a4941d508e98, type: 3}
   destructionForceThreshold: 2
 --- !u!212 &4322136111688121349
 SpriteRenderer:
