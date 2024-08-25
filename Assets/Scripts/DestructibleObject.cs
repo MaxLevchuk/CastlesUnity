@@ -59,9 +59,11 @@ public class DestructibleObject : MonoBehaviour
 
         Destroy(gameObject);
 
-        if (ballCount.GetBallCount() <= 0)
+
+        if (BallCount.Instance.GetBallCount() <= 0)
         {
-            ballCount.NoBallsLeft();
+
+            BallCount.Instance.NoBallsLeft();
         }
     }
 }

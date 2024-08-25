@@ -5,46 +5,103 @@ using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
-
-    public static Target Instance { get; private set; }
     public float rotationSpeed = 100f;
-    // public string nextSceneName;
-    
-    private string previousSceneName;
-
-    private void Awake()
-    {
-        Instance = this;
+    public GameObject TopPartPrefab;
+    public GameObject BottomPartPrefab;
+    private Transform parentObject;
+    private bool isDestroyed = false;
+    void Start()
+    {  
+        parentObject = transform.parent;
     }
+
     void Update()
-    {   
+    {
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            DestroyObject();
 
-           string previousSceneName = SceneManager.GetActiveScene().name;
-            PlayerPrefs.SetInt("LevenNumber", GetNextLevelNumber(previousSceneName));
-            SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+            if (parentObject != null && parentObject.childCount == 1) 
+            {
+                string previousSceneName = SceneManager.GetActiveScene().name;
+                PlayerPrefs.SetInt("LevelNumber", GetNextLevelNumber(previousSceneName));
+                SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+            }
         }
     }
+
     public int GetNextLevelNumber(string input)
     {
         string prefix = "Level";
         if (input.StartsWith(prefix))
         {
-            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber)) // delete word "Level" and string to int
+            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber))
             {
-                return levelNumber + 1;//next level
-            }   
+                return levelNumber + 1; 
+            }
         }
 
         return 0;
     }
+    public void DestroyObject()
+    {
+        if (isDestroyed) return;
+
+        isDestroyed = true;
 
 
+        if (BottomPartPrefab != null)
+        {
 
+
+            GameObject BottomPart = Instantiate(BottomPartPrefab, transform.position, transform.rotation);
+            BottomPart.transform.localScale = transform.localScale;
+
+            Rigidbody2D originalRigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody2D[] leftRigidbodies = BottomPart.GetComponentsInChildren<Rigidbody2D>();
+
+            foreach (var rb in leftRigidbodies)
+            {
+                rb.velocity = originalRigidbody.velocity;
+                rb.angularVelocity = originalRigidbody.angularVelocity;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("BottomPart is not set in the inspector.");
+        }
+
+
+        if (TopPartPrefab != null)
+        {
+
+            GameObject TopPart = Instantiate(TopPartPrefab, transform.position, transform.rotation);
+            TopPart.transform.localScale = transform.localScale;
+
+            Rigidbody2D originalRigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody2D[] rightRigidbodies = TopPart.GetComponentsInChildren<Rigidbody2D>();
+
+            foreach (var rb in rightRigidbodies)
+            {
+                rb.velocity = originalRigidbody.velocity;
+                rb.angularVelocity = originalRigidbody.angularVelocity;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("TopPart is not set in the inspector.");
+        }
+
+        Destroy(gameObject);
+
+        if (BallCount.Instance.GetBallCount() <= 0)
+        {
+            BallCount.Instance.NoBallsLeft();
+        }
+    }
 }
-

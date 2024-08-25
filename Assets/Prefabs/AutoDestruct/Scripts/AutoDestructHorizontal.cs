@@ -10,12 +10,13 @@ public class AutoDestructHorizontal : MonoBehaviour
    
     public float destructionForceThreshold = 10f;
     private bool isDestroyed = false;
-
+    private Rigidbody2D rb;
     private BallCount ballCount;
 
     private void Start()
     {
         ballCount = FindObjectOfType<BallCount>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,9 +43,10 @@ public class AutoDestructHorizontal : MonoBehaviour
         ScoreManager.instance.AddPoint(ScoreByDestroy);
         isDestroyed = true;
 
-  
+
         if (BottomPartPrefab != null)
         {
+            
            
             GameObject BottomPart = Instantiate(BottomPartPrefab, transform.position, transform.rotation);
             BottomPart.transform.localScale = transform.localScale;
@@ -86,9 +88,9 @@ public class AutoDestructHorizontal : MonoBehaviour
 
         Destroy(gameObject);
 
-        if (ballCount.GetBallCount() <= 0)
+        if (BallCount.Instance.GetBallCount() <= 0)
         {
-            ballCount.NoBallsLeft();
+            BallCount.Instance.NoBallsLeft();
         }
     }
 }

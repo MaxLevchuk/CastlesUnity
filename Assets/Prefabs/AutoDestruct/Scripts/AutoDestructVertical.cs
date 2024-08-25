@@ -35,6 +35,8 @@ public class AutoDestructVertical : MonoBehaviour
         }
     }
 
+
+        
     public void DestroyObject()
     {
         if (isDestroyed) return;
@@ -86,9 +88,10 @@ public class AutoDestructVertical : MonoBehaviour
 
         Destroy(gameObject);
 
-        if (ballCount.GetBallCount() <= 0)
+
+        if (BallCount.Instance.GetBallCount() <= 0)
         {
-            ballCount.NoBallsLeft();
+            BallCount.Instance.NoBallsLeft();
         }
     }
 }
