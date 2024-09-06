@@ -132,7 +132,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.776
-  m_Color: {r: 0.20392156, g: 0.31929237, b: 1, a: 1}
+  m_Color: {r: 0.1745283, g: 0.29245278, b: 1, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 9.16
+  m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a48457f8d7867f46a9ae08520f36dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disappearTime: 5
+  disappearTime: 3
 --- !u!61 &7935221158666089859
 BoxCollider2D:
   m_ObjectHideFlags: 0

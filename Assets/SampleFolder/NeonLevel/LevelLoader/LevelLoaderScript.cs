@@ -14,9 +14,9 @@ public class LevelLoaderScript : MonoBehaviour
         Time.timeScale = 0f;
         Animator animator = GetComponent<Animator>();
         animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-        nextSceneName = "Level" + PlayerPrefs.GetInt("LevenNumber");
+        nextSceneName = "Level" + PlayerPrefs.GetInt("LevelNumber");
         previousSceneName = SceneManager.GetActiveScene().name;
-        levelText.text = "Level " + PlayerPrefs.GetInt("LevenNumber"); 
+        levelText.text = "Level " + PlayerPrefs.GetInt("LevelNumber"); 
     }
     public void LoadNextScene()
     {

@@ -40,14 +40,15 @@ public class Target : MonoBehaviour
         string prefix = "Level";
         if (input.StartsWith(prefix))
         {
-            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber))
+            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber)) // delete word "Level" and string to int
             {
-                return levelNumber + 1; 
+                return levelNumber + 1;//next level
             }
         }
 
         return 0;
     }
+
     public void DestroyObject()
     {
         if (isDestroyed) return;

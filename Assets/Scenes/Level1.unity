@@ -548,7 +548,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77563595cc408124ead700ced83e36e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 631843d36de5a604e91079ed3751761d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -666,7 +666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  nextSceneName: Level4
+  TopPartPrefab: {fileID: 0}
+  BottomPartPrefab: {fileID: 0}
 --- !u!212 &534375852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2435,7 +2436,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2533359615
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3064,6 +3065,8 @@ MonoBehaviour:
   sfx1: {fileID: 0}
   sfx2: {fileID: 0}
   sfx3: {fileID: 0}
+  sfx4: {fileID: 0}
+  volume: 1
 --- !u!4 &2076019974
 Transform:
   m_ObjectHideFlags: 0
