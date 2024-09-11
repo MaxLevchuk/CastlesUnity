@@ -1015,10 +1015,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 957616750}
-    - target: {fileID: 3531717021903409871, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3986899467629763360, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.6170763
@@ -1059,57 +1055,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_Color.b
-      value: 0.25942332
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_Color.g
-      value: 0.080322154
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_Intensity
-      value: 8.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_LightType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_LocalBounds.m_Center.x
-      value: -0.00024998188
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_LocalBounds.m_Center.y
-      value: -0.000100016594
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.00045
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_LocalBounds.m_Extent.y
-      value: 1.0009
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6855252508514168406, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: 1354986905
-      objectReference: {fileID: 0}
-    - target: {fileID: 7407035516526291095, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
-      propertyPath: balls
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8236519006723158853, guid: c489e345a62fabe47b1f48cd74d65cf4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 81.29999
+      value: 2.0531006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

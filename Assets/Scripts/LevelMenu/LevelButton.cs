@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,7 +10,7 @@ public class LevelButton : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        if (button == null)
+        if (button == null) 
         {
             Debug.LogError("Button component not found!");
             return;
@@ -33,7 +33,19 @@ public class LevelButton : MonoBehaviour
     {
         Debug.Log("Selected Level: " + level.ToString());
 
-        PlayerPrefs.SetInt("LevelNumber", level);
-        SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+        if (!IsSceneAlreadyLoaded("LevelLoaderScene"))
+        {
+            PlayerPrefs.SetInt("LevelNumber", level);
+            SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+        }
+        else
+        {
+            Debug.Log("Scene is loaded. Wait");
+        }
+    }
+    bool IsSceneAlreadyLoaded(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        return scene.isLoaded;
     }
 }

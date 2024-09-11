@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c54035881c1739499b0f85bfb5a76f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreByDestroy: 0
+  ScoreByDestroy: 15
   RightPartPrefab: {fileID: 5722084630861397472, guid: 72c693a77ad49b544b90f58431717012, type: 3}
   LeftPartPrefab: {fileID: 3073230404296903727, guid: 1b66cba5643973043a6e09a5b18b1136, type: 3}
   destructionForceThreshold: 10

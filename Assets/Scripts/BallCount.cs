@@ -81,7 +81,7 @@ public class BallCount : MonoBehaviour
 
         string currentSceneName = SceneManager.GetActiveScene().name;
         int currentLevelNumber = int.Parse(currentSceneName.Substring(5));
-        PlayerPrefs.SetInt("LevenNumber", currentLevelNumber);
+        PlayerPrefs.SetInt("LevelNumber", currentLevelNumber);
         SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
 
     
