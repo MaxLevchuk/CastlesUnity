@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 2caff325a0f63aa4bbbfe6613dd68e8f
-  - enabled: 0
-    path: Assets/Scenes/Level4.unity
-    guid: 1b72d822b0b195f4980667801172a442
-  - enabled: 0
-    path: Assets/Scenes/Level3.unity
-    guid: cd2def508a344994bbc7b88b39cb4682
   - enabled: 1
     path: Assets/TestLevel1.unity
     guid: 4fd2c0ea0254745498567121928b2829
@@ -32,21 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: c5e85f0bb51876a4686ce958dcd23e91
-  - enabled: 0
-    path: Assets/Scenes/Level6.unity
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level14.unity
     guid: cdc48d7c75484294f84e9fdb871df477
-  - enabled: 0
-    path: Assets/Scenes/Level7.unity
-    guid: 236fdaa4d075fd84091a377cb81df164
-  - enabled: 0
-    path: Assets/Scenes/Level5.unity
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level13.unity
     guid: af4f3fa09625b274bbfce43c5130d960
-  - enabled: 0
-    path: Assets/Scenes/LavaLevels/Level9.unity
-    guid: d9839192e32867d4995d3090df9395b3
-  - enabled: 0
-    path: Assets/Scenes/GreenLevels/Level3.unity
-    guid: dcbb2312038249e4a9ac6c6382759f91
   - enabled: 1
     path: Assets/Scenes/NeonLevels/Level2.unity
     guid: 72e0ec1351f1b9c47a8f7261b4a1c70b
@@ -64,5 +49,26 @@ EditorBuildSettings:
     guid: 8c396d7caa02cc048b582c717ff58097
   - enabled: 1
     path: Assets/Scenes/NeonLevels/Level6.unity
-    guid: bf7efe9dd5b8cb54992de42a33fa05d4
+    guid: eeddb45aa2996f6488063eb76fcba197
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level10.unity
+    guid: 92b3440ee92507342804569b71b0cd76
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level11.unity
+    guid: 62422654975d2364aa213f14aa0cbfa1
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level12.unity
+    guid: 7d9021b789b1b2041a8e1a0ce3e5a18f
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level15.unity
+    guid: 6baccf2e1d753494cb0d676998f23623
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level16.unity
+    guid: ccf044db4ed6031499a139c8e8187413
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level17.unity
+    guid: 151a657ef56df8f42a0095b11530edb8
+  - enabled: 1
+    path: Assets/Scenes/SnowLevels/Level18.unity
+    guid: 530e177ed52ddf94cb37966e64211fb5
   m_configObjects: {}

@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 3089927455941380433}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.044, y: 1.117, z: 0}
-  m_LocalScale: {x: 0.12, y: 1.9058573, z: 0}
+  m_LocalPosition: {x: -0.044, y: 0.997, z: 0}
+  m_LocalScale: {x: 0.12, y: 1.905857, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7539731144548365006}
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3089927455941380433}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -238,7 +238,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.042, y: 0.105, z: 0}
-  m_LocalScale: {x: 1.6691535, y: 1.9068898, z: 1}
+  m_LocalScale: {x: 1.6691535, y: 1.669153, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2683728957114379226}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreByDestroy: 10
-  DestructibleObjectPrefab: {fileID: 2489880962204362686, guid: a1780f56697ad164ca3e135d043f494e, type: 3}
+  DestructibleObjectPrefab: {fileID: 410836091982770476, guid: 63a39b42b4e32f34c9d7d3b59d4e174f, type: 3}
   destructionForceThreshold: 12
 --- !u!212 &5465179865701682957
 SpriteRenderer:
@@ -461,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 7183783026794046492}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.044, y: -0.91, z: 0}
+  m_LocalPosition: {x: -0.044, y: -0.789, z: 0}
   m_LocalScale: {x: 0.12, y: 1.9058573, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,7 +587,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7183783026794046492}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -636,7 +636,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.937, y: 0.104, z: 0}
-  m_LocalScale: {x: 0.12, y: 1.9058573, z: 0}
+  m_LocalScale: {x: 0.12, y: 1.669153, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7539731144548365006}
@@ -761,7 +761,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710957743192217614}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -810,7 +810,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8485, y: 0.1036, z: 0}
-  m_LocalScale: {x: 0.12, y: 1.9058573, z: 0}
+  m_LocalScale: {x: 0.12, y: 1.669153, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7539731144548365006}
@@ -935,7 +935,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951713422141284839}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

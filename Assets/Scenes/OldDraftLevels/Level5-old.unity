@@ -308,7 +308,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5359004, y: 0.00031466945}
+  m_ConnectedAnchor: {x: 0.5359004, y: 0.0003594877}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &290871024 stripped
@@ -332,7 +332,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5359004, y: 0.00031457568}
+  m_ConnectedAnchor: {x: 0.5359004, y: 0.00035938056}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &347783313
@@ -425,7 +425,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: 0.5307072}
+  m_ConnectedAnchor: {x: -0.0011981254, y: 0.5344029}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &449674465 stripped
@@ -449,7 +449,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0011982681, y: 0.5317559}
+  m_ConnectedAnchor: {x: 0.0011982681, y: 0.535601}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &474511074
@@ -509,7 +509,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0011982681, y: -0.5312315}
+  m_ConnectedAnchor: {x: 0.0011982681, y: -0.5350019}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &679572953
@@ -900,7 +900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  nextSceneName: Level3
+  TopPartPrefab: {fileID: 0}
+  BottomPartPrefab: {fileID: 0}
 --- !u!212 &723707599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1142,6 +1143,8 @@ MonoBehaviour:
   sfx1: {fileID: 0}
   sfx2: {fileID: 0}
   sfx3: {fileID: 0}
+  sfx4: {fileID: 0}
+  volume: 1
 --- !u!4 &809265456
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,7 +1415,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5338035, y: 0.00052462623}
+  m_ConnectedAnchor: {x: -0.5338035, y: 0.0005993485}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &878213790 stripped
@@ -2108,7 +2111,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0011982681, y: -0.5312313}
+  m_ConnectedAnchor: {x: 0.0011982681, y: -0.5350017}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &1415787155
@@ -2217,7 +2220,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: -0.5322803}
+  m_ConnectedAnchor: {x: -0.0011981254, y: -0.5356009}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1512731340 stripped
@@ -2241,7 +2244,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5361999, y: -0.00052437617}
+  m_ConnectedAnchor: {x: -0.5361999, y: -0.0005990628}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &1525921341
@@ -2331,7 +2334,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.53350407, y: -0.00073417666}
+  m_ConnectedAnchor: {x: 0.53350407, y: -0.0008387451}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1588272380 stripped
@@ -2355,7 +2358,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: 0.53070694}
+  m_ConnectedAnchor: {x: -0.0011981254, y: 0.5344026}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!4 &1737554711 stripped
@@ -2470,7 +2473,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.53350407, y: -0.00073417666}
+  m_ConnectedAnchor: {x: 0.53350407, y: -0.0008387451}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1794728072 stripped
@@ -2494,7 +2497,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5362, y: -0.00052437617}
+  m_ConnectedAnchor: {x: -0.5362, y: -0.0005990628}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1799957089 stripped
@@ -2518,7 +2521,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0011982681, y: 0.53175616}
+  m_ConnectedAnchor: {x: 0.0011982681, y: 0.535601}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &1812588752
@@ -2680,7 +2683,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.53350407, y: -0.00073417666}
+  m_ConnectedAnchor: {x: 0.53350407, y: -0.0008387451}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &1891978147
@@ -2903,7 +2906,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: 0.5307072}
+  m_ConnectedAnchor: {x: -0.0011981254, y: 0.5344029}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &2020605254
@@ -3242,7 +3245,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: -0.5322803}
+  m_ConnectedAnchor: {x: -0.0011981254, y: -0.535601}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &2095767622
@@ -3339,7 +3342,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011981254, y: -0.5322803}
+  m_ConnectedAnchor: {x: -0.0011981254, y: -0.5356009}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &2103089299
@@ -3368,7 +3371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5275132209119821992, guid: 6fbb5834d090831478ea5f8b57b2ce98, type: 3}
       propertyPath: m_Name
-      value: MovingPlatform
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 7655828284312323790, guid: 6fbb5834d090831478ea5f8b57b2ce98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3547,7 +3550,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5361998, y: -0.00052437617}
+  m_ConnectedAnchor: {x: -0.5361998, y: -0.0005990628}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &2142019802 stripped
@@ -3571,7 +3574,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5338035, y: 0.0005244074}
+  m_ConnectedAnchor: {x: -0.5338035, y: 0.00059909857}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &2142743815

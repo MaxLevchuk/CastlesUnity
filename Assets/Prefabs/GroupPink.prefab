@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6971191608281161177}
   m_Layer: 8
-  m_Name: GroupBlue
+  m_Name: GroupPink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: DestroyedWallPrefab
       value: 
       objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
+    - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
     - target: {fileID: 8240963938641278619, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -195,6 +199,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: DestroyedWallPrefab
+      value: 
+      objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
+    - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: DestructibleObjectPrefab
       value: 
       objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
     - target: {fileID: 8240963938641278619, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
@@ -287,6 +295,10 @@ PrefabInstance:
       propertyPath: DestroyedWallPrefab
       value: 
       objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
+    - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: DestructibleObjectPrefab
+      value: 
+      objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
     - target: {fileID: 8240963938641278619, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -375,6 +387,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: DestroyedWallPrefab
+      value: 
+      objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
+    - target: {fileID: 6519585947474722411, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: DestructibleObjectPrefab
       value: 
       objectReference: {fileID: 5409789133080866359, guid: b31b5ba594571594aaf4b2da9b9239cc, type: 3}
     - target: {fileID: 8240963938641278619, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}

@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3103014999250707690, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
+      propertyPath: m_Name
+      value: PageNeon
+      objectReference: {fileID: 0}
     - target: {fileID: 3392876510403895041, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -692,6 +696,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1235557903}
+    - target: {fileID: 3498486137919312255, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
+      propertyPath: m_Name
+      value: PageSnow
+      objectReference: {fileID: 0}
     - target: {fileID: 3508546880638486703, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -707,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 3508546880638486703, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541626193764843353, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
+      propertyPath: m_Name
+      value: Page1
       objectReference: {fileID: 0}
     - target: {fileID: 4248529690087386271, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1120,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8948552407646130460, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
+      propertyPath: level
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 9152759874208365854, guid: 681e0d3a7b999d84d8e965050e845570, type: 3}
       propertyPath: m_Name
       value: NewLevelMenuCanvas
@@ -1317,7 +1333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957135232129420106, guid: 09e16bd0d7936e84a84631ce5ae55024, type: 3}
       propertyPath: LevelNumber
-      value: 9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6500032026714091214, guid: 09e16bd0d7936e84a84631ce5ae55024, type: 3}
       propertyPath: m_Name
