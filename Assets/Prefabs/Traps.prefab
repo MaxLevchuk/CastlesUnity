@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyedBallPrefab: {fileID: 4600360011817904016, guid: 0150418ed61f19241bf4c1f361449444, type: 3}
-  explosionForce: 500
+  explosionForce: 5
   randomRadius: 5
 --- !u!50 &4520535386559651347
 Rigidbody2D:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyedBallPrefab: {fileID: 4600360011817904016, guid: 0150418ed61f19241bf4c1f361449444, type: 3}
-  explosionForce: 500
+  explosionForce: 5
   randomRadius: 5
 --- !u!50 &5328734347950277305
 Rigidbody2D:
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyedBallPrefab: {fileID: 4600360011817904016, guid: 0150418ed61f19241bf4c1f361449444, type: 3}
-  explosionForce: 500
+  explosionForce: 5
   randomRadius: 5
 --- !u!60 &1638038232936914232
 PolygonCollider2D:
