@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
@@ -31,8 +32,18 @@ public class Target : MonoBehaviour
                 string previousSceneName = SceneManager.GetActiveScene().name;
                 PlayerPrefs.SetInt("LevelNumber", GetNextLevelNumber(previousSceneName));
                 SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+                SaveCurrentLevel();
             }
         }
+    }
+    private void SaveCurrentLevel()
+    {
+
+
+        string previousSceneName = SceneManager.GetActiveScene().name;
+        if (GetNextLevelNumber(previousSceneName) > CurrentLevel.Instance.LevelNumber)
+        { PlayerPrefs.SetInt("CurrentLevel", GetNextLevelNumber(previousSceneName)); }
+        
     }
 
     public int GetNextLevelNumber(string input)

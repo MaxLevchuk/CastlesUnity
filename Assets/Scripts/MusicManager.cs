@@ -6,6 +6,7 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
+
         AudioSource audioSource = GetComponent<AudioSource>();
         if (!audioSource.isPlaying)
         {

@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    // Логіка повороту патріклсів вираховується від залежності руху снаряду у напрямку порталу
     public Transform connectedPortal;
     public float teleportCooldown = 0.5f;
     public GameObject entryParticlePrefab;
     public GameObject exitParticlePrefab;
     private bool canTeleport = true;
+
+    public bool isInverted = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,23 +18,37 @@ public class Portal : MonoBehaviour
             StartCoroutine(Teleport(other));
         }
     }
+
     private IEnumerator Teleport(Collider2D ball)
     {
         canTeleport = false;
         Portal connectedPortalScript = connectedPortal.GetComponent<Portal>();
         connectedPortalScript.canTeleport = false;
+
         Rigidbody2D rb = ball.GetComponent<Rigidbody2D>();
         Vector2 velocity = rb.velocity;
         float angularVelocity = rb.angularVelocity;
         Vector3 relativePosition = ball.transform.position - transform.position;
         Vector2 localVelocity = transform.InverseTransformDirection(velocity);
+
+    
+        if (isInverted)
+        {
+            localVelocity = -localVelocity;
+            relativePosition = -relativePosition;
+        }
+
+
         GameObject newBall = Instantiate(ball.gameObject, connectedPortal.position + relativePosition, ball.transform.rotation);
         Rigidbody2D newRb = newBall.GetComponent<Rigidbody2D>();
+
+
         Vector2 portalVelocity = connectedPortal.TransformDirection(localVelocity);
         newRb.velocity = portalVelocity;
         newRb.angularVelocity = angularVelocity;
 
         DisableAllComponents(ball);
+
 
         GameObject exitParticles = Instantiate(exitParticlePrefab, newBall.transform.position, Quaternion.identity);
         ParticleSystem exitParticleSystem = exitParticles.GetComponent<ParticleSystem>();
@@ -62,7 +77,6 @@ public class Portal : MonoBehaviour
 
     private IEnumerator FollowOutBall(GameObject particles, Transform target)
     {
-        ParticleSystem ps = particles.GetComponent<ParticleSystem>();
         Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
         Vector2 localVelocity = transform.InverseTransformDirection(rb.velocity);
         float angleOffset = 0f;
@@ -81,7 +95,6 @@ public class Portal : MonoBehaviour
 
     private IEnumerator FollowEntryBall(GameObject particles, Transform target)
     {
-        ParticleSystem ps = particles.GetComponent<ParticleSystem>();
         Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
         Vector2 localVelocity = transform.InverseTransformDirection(rb.velocity);
         float angleOffset = 0f;
@@ -97,7 +110,6 @@ public class Portal : MonoBehaviour
         particles.transform.rotation = Quaternion.Euler(0, 0, portalRotation + angleOffset);
         yield break;
     }
-
 
     private void DisableAllComponents(Collider2D ball)
     {

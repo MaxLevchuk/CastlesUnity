@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -68,35 +68,42 @@ public class Explode : MonoBehaviour
     private void HandleDestruction()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        List<Rigidbody2D> affectedRigidbodies = new List<Rigidbody2D>();
 
-        // Destroy destructible objects and collect rigidbodies
         foreach (Collider2D collider in colliders)
         {
-            DestructibleObject destructibleWall = collider.GetComponent<DestructibleObject>();
-            if (destructibleWall != null)
+            DestructibleObject destructibleObject = collider.GetComponent<DestructibleObject>();
+            if (destructibleObject != null)
             {
-                destructibleWall.DestroyObject(); // Call destruction method directly
+                destructibleObject.DestroyObject();
+                continue; 
+            }
+            AutoDestructHorizontal autoDestructHorizontal = collider.GetComponent<AutoDestructHorizontal>();
+            if (autoDestructHorizontal != null)
+            {
+                autoDestructHorizontal.DestroyObject();
+                continue;
+            }
+            AutoDestructVertical autoDestructVertical = collider.GetComponent<AutoDestructVertical>();
+            if (autoDestructVertical != null)
+            {
+                autoDestructVertical.DestroyObject();
             }
         }
 
-        // Recalculate colliders to include new fragments
         colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-
-        // Apply explosion force to all affected objects
         foreach (Collider2D collider in colliders)
         {
             Rigidbody2D rigidbody = collider.GetComponent<Rigidbody2D>();
-
             if (rigidbody != null)
             {
                 Vector2 direction = rigidbody.transform.position - transform.position;
                 float distance = direction.magnitude;
-                float explosionForce = force / (distance + 1); // Reduce force with distance
+                float explosionForce = force / (distance + 1); 
                 rigidbody.AddForce(direction.normalized * explosionForce);
             }
         }
     }
+
 
     // Draw explosion radius in editor
     private void OnDrawGizmos()
