@@ -68,6 +68,9 @@ TagManager:
   - name: Destruction obj
     uniqueID: 2285671323
     locked: 0
+  - name: Pause Menu
+    uniqueID: 3005982489
+    locked: 0
   - name: LevelLoad
     uniqueID: 1080099631
     locked: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LuminousBlocks.Utils;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
@@ -54,8 +55,30 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
+    public void Restart()
+    {
+        if (!IsSceneAlreadyLoaded("LevelLoaderScene"))
+        {
+            string previousSceneName = SceneManager.GetActiveScene().name;
+            PlayerPrefs.SetInt("LevelNumber", Utils.GetActiveLevelNumber(previousSceneName));
+            SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
+        }
+        else
+        {
+            Debug.Log("Scene is loaded. Wait");
+        }    
+    }
+
     public bool IsPaused()
     {
         return isPaused;
     }
+
+
+    bool IsSceneAlreadyLoaded(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        return scene.isLoaded;
+    }
+
 }

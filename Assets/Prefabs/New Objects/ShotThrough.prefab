@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7936351607214610433}
   - component: {fileID: 6417627436454370619}
   - component: {fileID: 3482758775109703740}
+  - component: {fileID: -688491523042456528}
   m_Layer: 0
   m_Name: ShotThrough
   m_TagString: Untagged
@@ -328,6 +329,33 @@ PolygonCollider2D:
       - {x: -2.27, y: 1.125}
       - {x: -1.9699999, y: 1.645}
   m_UseDelaunayMesh: 0
+--- !u!50 &-688491523042456528
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277301047759893868}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8599215041273848109
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,57 +14,63 @@ public class SlingshotScript : MonoBehaviour
     // Particles
     public GameObject hitParticlesPrefab;
 
-    //  Trajectory property
+    // Trajectory property
     private TrajectoryLine trajectoryLine;
 
     private bool initialCursorVisibility;
 
     private BallCount ballCount;
 
+    private Vector3 touchStartPoint;
+
     private void Awake()
     {
         Instance = this;
     }
+
     void Start()
     {
-        
         initialCursorVisibility = Cursor.visible;
         trajectoryLine = GetComponent<TrajectoryLine>();
         ballCount = FindObjectOfType<BallCount>();
-
     }
 
     void Update()
     {
         if (ballCount.GetBallCount() > 0 && Time.timeScale != 0) // Pause check
         {
-           
-            if (Input.GetMouseButtonDown(0))
-            {   
-                StartAiming();
-            }
-
-            if (Input.GetMouseButton(0) && isAiming)
+            if (Input.touchCount > 0)
             {
-                Aim();
-            }
+                Touch touch = Input.GetTouch(0);
 
-            if (Input.GetMouseButtonUp(0) && isAiming)
-            {
-                LaunchProjectile();
+                if (touch.phase == TouchPhase.Began)
+                {
+                    StartAiming(touch);
+                }
+
+                if (touch.phase == TouchPhase.Moved && isAiming)
+                {
+                    Aim(touch);
+                }
+
+                if (touch.phase == TouchPhase.Ended && isAiming)
+                {
+                    LaunchProjectile();
+                }
             }
-            
         }
     }
 
-    void StartAiming()
+    void StartAiming(Touch touch)
     {
         isAiming = true;
         currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
         currentProjectile.GetComponent<Collider2D>().enabled = false;
 
-        // Attaching particles to new projectile
+        touchStartPoint = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 0));
+        touchStartPoint.z = 0;
+
         var particleCollisionScript = currentProjectile.GetComponent<BallParticleCollision>();
         if (particleCollisionScript != null && particleCollisionScript.hitParticles == null)
         {
@@ -77,30 +83,19 @@ public class SlingshotScript : MonoBehaviour
         trajectoryLine.lineRenderer.positionCount = trajectoryLine.lineSegmentCount;
     }
 
-    void Aim()
+    void Aim(Touch touch)
     {
-
-        
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
-            Vector3 mouseMovement = new Vector3(mouseX, mouseY, 0);
-            Vector3 worldPosition = currentProjectile.transform.position + mouseMovement;
-
-            Vector3 aimDirection = worldPosition - launchPoint.position;
-            float stretchDistance = aimDirection.magnitude;
-
-            if (stretchDistance > maxStretch)
-            {
-                aimDirection = aimDirection.normalized * maxStretch;
-            }
-
-            currentProjectile.transform.position = launchPoint.position + aimDirection;
-
-            Vector2 launchVelocity = (aimDirection.normalized * (stretchDistance / maxStretch) * launchForce);
-
-            trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
-        
-      
+        Vector3 touchWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 0));
+        touchWorldPosition.z = 0;   
+        Vector3 currentDirection = touchWorldPosition - touchStartPoint;
+        float stretchDistance = currentDirection.magnitude;
+        if (stretchDistance > maxStretch)
+        {
+            currentDirection = currentDirection.normalized * maxStretch;
+        }
+        currentProjectile.transform.position = launchPoint.position + currentDirection;
+        Vector2 launchVelocity = (currentDirection.normalized * (stretchDistance / maxStretch) * launchForce);
+        trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
     }
 
     void LaunchProjectile()
@@ -111,7 +106,6 @@ public class SlingshotScript : MonoBehaviour
         Vector3 launchDirection = (launchPoint.position - currentProjectile.transform.position).normalized;
         float stretchDistance = (launchPoint.position - currentProjectile.transform.position).magnitude;
 
-      
         if (stretchDistance < minStretch)
         {
             Destroy(currentProjectile);
@@ -124,13 +118,14 @@ public class SlingshotScript : MonoBehaviour
         Rigidbody2D rb = currentProjectile.GetComponent<Rigidbody2D>();
         if (rb == null) return;
         rb.isKinematic = false;
-        BallDisappearing bd = currentProjectile.GetComponent<BallDisappearing>();        // enable ball disappearing and disable kinematic
+
+        BallDisappearing bd = currentProjectile.GetComponent<BallDisappearing>();  // enable ball disappearing and disable kinematic
         bd.enabled = true;
+
         float launchForceMultiplier = Mathf.Clamp(stretchDistance / maxStretch, 0.5f, 1f);
         Vector2 initialVelocity = launchDirection * launchForceMultiplier * launchForce;
         rb.AddForce(initialVelocity, ForceMode2D.Impulse);
 
-        // Ball transformation script is notified of the launch
         var transformBallScript = currentProjectile.GetComponent<Split>();
         if (transformBallScript != null)
         {

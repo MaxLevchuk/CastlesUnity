@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("LevelMenu");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using LuminousBlocks.Utils;
 
 public class Target : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class Target : MonoBehaviour
             if (parentObject != null && parentObject.childCount == 1) 
             {
                 string previousSceneName = SceneManager.GetActiveScene().name;
-                PlayerPrefs.SetInt("LevelNumber", GetNextLevelNumber(previousSceneName));
+                PlayerPrefs.SetInt("LevelNumber", Utils.GetNextLevelNumber(previousSceneName));
                 SceneManager.LoadSceneAsync("LevelLoaderScene", LoadSceneMode.Additive);
                 SaveCurrentLevel();
             }
@@ -41,25 +42,12 @@ public class Target : MonoBehaviour
 
 
         string previousSceneName = SceneManager.GetActiveScene().name;
-        if (GetNextLevelNumber(previousSceneName) > CurrentLevel.Instance.LevelNumber)
-        { PlayerPrefs.SetInt("CurrentLevel", GetNextLevelNumber(previousSceneName)); }
+        if (Utils.GetNextLevelNumber(previousSceneName) > CurrentLevel.Instance.LevelNumber)
+        { PlayerPrefs.SetInt("CurrentLevel", Utils.GetNextLevelNumber(previousSceneName)); }
         
     }
 
-    public int GetNextLevelNumber(string input)
-    {
-        string prefix = "Level";
-        if (input.StartsWith(prefix))
-        {
-            if (int.TryParse(input.Substring(prefix.Length), out int levelNumber)) // delete word "Level" and string to int
-            {
-                return levelNumber + 1;//next level
-            }
-        }
-
-        return 0;
-    }
-
+    
     public void DestroyObject()
     {
         if (isDestroyed) return;
