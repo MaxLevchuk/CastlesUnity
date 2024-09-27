@@ -18,10 +18,12 @@ public class SlingshotScript : MonoBehaviour
     private TrajectoryLine trajectoryLine;
 
     private bool initialCursorVisibility;
-
     private BallCount ballCount;
 
     private Vector3 touchStartPoint;
+
+    // Input mode flag
+    private bool isTouchSupported;
 
     private void Awake()
     {
@@ -33,31 +35,70 @@ public class SlingshotScript : MonoBehaviour
         initialCursorVisibility = Cursor.visible;
         trajectoryLine = GetComponent<TrajectoryLine>();
         ballCount = FindObjectOfType<BallCount>();
+
+        // Detect if the device supports touch or we are in the editor
+        isTouchSupported = Input.touchSupported || Application.isEditor; // Allow mouse input in Editor
     }
 
     void Update()
     {
         if (ballCount.GetBallCount() > 0 && Time.timeScale != 0) // Pause check
         {
-            if (Input.touchCount > 0)
+#if UNITY_EDITOR
+            // In the editor, use mouse input
+            HandleMouseInput();
+#else
+            // On devices, use touch input if supported, otherwise fall back to mouse
+            if (isTouchSupported)
             {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    StartAiming(touch);
-                }
-
-                if (touch.phase == TouchPhase.Moved && isAiming)
-                {
-                    Aim(touch);
-                }
-
-                if (touch.phase == TouchPhase.Ended && isAiming)
-                {
-                    LaunchProjectile();
-                }
+                HandleTouchInput();
             }
+            else
+            {
+                HandleMouseInput();
+            }
+#endif
+        }
+    }
+
+    void HandleTouchInput()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                StartAiming(touch);
+            }
+
+            if (touch.phase == TouchPhase.Moved && isAiming)
+            {
+                Aim(touch);
+            }
+
+            if (touch.phase == TouchPhase.Ended && isAiming)
+            {
+                LaunchProjectile();
+            }
+        }
+    }
+
+    void HandleMouseInput()
+    {
+        if (Input.GetMouseButtonDown(0)) // Left mouse button down
+        {
+            StartAimingMouse();
+        }
+
+        if (Input.GetMouseButton(0) && isAiming)
+        {
+            AimMouse();
+        }
+
+        if (Input.GetMouseButtonUp(0) && isAiming)
+        {
+            LaunchProjectile();
         }
     }
 
@@ -83,11 +124,48 @@ public class SlingshotScript : MonoBehaviour
         trajectoryLine.lineRenderer.positionCount = trajectoryLine.lineSegmentCount;
     }
 
+    void StartAimingMouse()
+    {
+        isAiming = true;
+        currentProjectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
+        currentProjectile.GetComponent<Rigidbody2D>().isKinematic = true;
+        currentProjectile.GetComponent<Collider2D>().enabled = false;
+
+        touchStartPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        touchStartPoint.z = 0;
+
+        var particleCollisionScript = currentProjectile.GetComponent<BallParticleCollision>();
+        if (particleCollisionScript != null && particleCollisionScript.hitParticles == null)
+        {
+            particleCollisionScript.hitParticles = Instantiate(hitParticlesPrefab, currentProjectile.transform).GetComponent<ParticleSystem>();
+            Debug.Log("Particle system instantiated and attached to projectile");
+        }
+        Cursor.visible = false;
+
+        // Resetting LineRenderer
+        trajectoryLine.lineRenderer.positionCount = trajectoryLine.lineSegmentCount;
+    }
+
     void Aim(Touch touch)
     {
         Vector3 touchWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 0));
-        touchWorldPosition.z = 0;   
+        touchWorldPosition.z = 0;
         Vector3 currentDirection = touchWorldPosition - touchStartPoint;
+        float stretchDistance = currentDirection.magnitude;
+        if (stretchDistance > maxStretch)
+        {
+            currentDirection = currentDirection.normalized * maxStretch;
+        }
+        currentProjectile.transform.position = launchPoint.position + currentDirection;
+        Vector2 launchVelocity = (currentDirection.normalized * (stretchDistance / maxStretch) * launchForce);
+        trajectoryLine.UpdateTrajectory(currentProjectile.transform.position, launchVelocity);
+    }
+
+    void AimMouse()
+    {
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        mouseWorldPosition.z = 0;
+        Vector3 currentDirection = mouseWorldPosition - touchStartPoint;
         float stretchDistance = currentDirection.magnitude;
         if (stretchDistance > maxStretch)
         {

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8123062319327546590}
   m_Layer: 8
   m_Name: BigWall 1
-  m_TagString: Wall
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,6 @@ MonoBehaviour:
   ScoreByDestroy: 10
   DestructibleObjectPrefab: {fileID: 4897563600021876158, guid: d9eea30d894fbd440856f2e1b84326aa, type: 3}
   destructionForceThreshold: 10
-  maxHealth: 20
 --- !u!212 &8088875966418659108
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ TagManager:
   - FlyInObject
   - Options
   - Ground
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -67,6 +68,9 @@ TagManager:
     locked: 0
   - name: Destruction obj
     uniqueID: 2285671323
+    locked: 0
+  - name: UI
+    uniqueID: 213945699
     locked: 0
   - name: Pause Menu
     uniqueID: 3005982489

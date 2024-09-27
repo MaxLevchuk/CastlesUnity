@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 2683728957114379226}
   m_Layer: 0
   m_Name: SqGroupPink
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
