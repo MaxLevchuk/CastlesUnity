@@ -1138,6 +1138,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1772179780155736463, guid: d0a5ac0204f525447967b72bc59f7559, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7559274
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772179780155736463, guid: d0a5ac0204f525447967b72bc59f7559, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772179780155736463, guid: d0a5ac0204f525447967b72bc59f7559, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08533281
+      objectReference: {fileID: 0}
     - target: {fileID: 2670847467753660420, guid: d0a5ac0204f525447967b72bc59f7559, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.36418

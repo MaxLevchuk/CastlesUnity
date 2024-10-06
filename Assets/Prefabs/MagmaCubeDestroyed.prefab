@@ -51,7 +51,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382954500330862746, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.024
       objectReference: {fileID: 0}
     - target: {fileID: 2382954500330862746, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85,6 +85,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2846234342260748418, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846234342260748418, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.47
+      objectReference: {fileID: 0}
     - target: {fileID: 4679679014606606751, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_Name
       value: MagmaCube
@@ -93,6 +101,10 @@ PrefabInstance:
       propertyPath: m_PointLightInnerRadius
       value: 0.893689
       objectReference: {fileID: 0}
+    - target: {fileID: 5610752351845191772, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e1047a34f8b418458cd5b0336c528d2, type: 3}
     m_RemovedComponents:
     - {fileID: 871677473326503072, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
     m_RemovedGameObjects: []
@@ -181,6 +193,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2846234342260748418, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846234342260748418, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.47
+      objectReference: {fileID: 0}
     - target: {fileID: 4679679014606606751, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_Name
       value: MagmaCube
@@ -191,12 +211,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610752351845191772, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610752351845191772, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_FlipY
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5610752351845191772, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b08e319974f8964187e2fa36bad471b, type: 3}
     - target: {fileID: 5610752351845191772, guid: a2fff54fa024c4b48a29996678dd23dd, type: 3}
       propertyPath: m_DrawMode
       value: 2

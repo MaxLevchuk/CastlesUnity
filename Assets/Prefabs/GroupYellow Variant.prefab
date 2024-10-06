@@ -44,6 +44,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 201704239450824724}
     m_Modifications:
     - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
@@ -153,7 +157,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 8.444999, y: 0.46829307}
+  m_ConnectedAnchor: {x: 7.4383316, y: 0.53619826}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &2703690001447974533 stripped
@@ -170,8 +174,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 201704239450824724}
     m_Modifications:
     - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.905857
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalScale.z
@@ -183,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.104
+      value: 0.1036
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -274,7 +286,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -8.449998, y: -0.46855527}
+  m_ConnectedAnchor: {x: -8.446664, y: -0.46855527}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!4 &1975247507414559054 stripped
@@ -295,6 +307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 201704239450824724}
     m_Modifications:
+    - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_BodyType
       value: 0
@@ -422,12 +438,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 201704239450824724}
     m_Modifications:
     - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 454283282427113153, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9058573
+      value: 1.6654277
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalScale.z
@@ -435,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.044
+      value: -0.0445
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.117
+      value: 0.9962
       objectReference: {fileID: 0}
     - target: {fileID: 3430034797452249315, guid: 8e4e6b213a538634481433eb0323ce7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -530,7 +550,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 7.4416637, y: 0.53151935}
+  m_ConnectedAnchor: {x: 7.4374995, y: 0.46834576}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!4 &6524043178183653393 stripped

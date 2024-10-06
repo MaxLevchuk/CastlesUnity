@@ -84,9 +84,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FireLevels/Level19.unity
     guid: 4fe7e189470d0a540a2fb73081245937
   - enabled: 1
-    path: Assets/Scenes/FireLevels/Level20.unity
+    path: Assets/Scenes/FireLevels/Level22.unity
     guid: dbcfee89d054ae14fab6bafff59e81ce
   - enabled: 1
-    path: Assets/Scenes/FireLevels/Level21.unity
+    path: Assets/Scenes/FireLevels/Level24.unity
     guid: 861ba76300ede6448b9701fa4c0cd004
   m_configObjects: {}
